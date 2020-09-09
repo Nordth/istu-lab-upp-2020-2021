@@ -1,2 +1,5 @@
 ~$Отчет.docx
 ~WRL2988.tmp
+project/back/project-management-internet-shop/dist
+project/back/project-management-internet-shop/node_modules
+project/back/project-management-internet-shop/src/credentials.ts
