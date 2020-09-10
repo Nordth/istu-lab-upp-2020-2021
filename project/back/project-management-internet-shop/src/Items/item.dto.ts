@@ -1,4 +1,5 @@
-import { IsString, IsNotEmpty, IsNumberString } from "class-validator";
+import { IsString, IsNotEmpty, IsNumberString, IsEnum, IsArray } from "class-validator";
+import { Genre } from "./items.entity";
 
 export class ItemDto {
     @IsString()
@@ -11,4 +12,7 @@ export class ItemDto {
     @IsString()
     @IsNotEmpty()
     description: string;
+
+    @IsEnum(Genre)
+    genre: Genre;
 }

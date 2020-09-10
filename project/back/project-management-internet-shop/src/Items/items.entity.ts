@@ -1,5 +1,13 @@
 import { Entity, BaseEntity, PrimaryGeneratedColumn, Column } from "typeorm";
 
+export enum Genre {
+    ACTION = "action",
+    ROLEPLAY = "roleplay",
+    STRATEGY = "strategy",
+    SIMULATOR = "simulator",
+    OTHER = "other",
+}
+
 @Entity()
 export class Items extends BaseEntity {
     @PrimaryGeneratedColumn()
@@ -16,4 +24,10 @@ export class Items extends BaseEntity {
 
     @Column()
     description: string;
+
+    @Column({
+        type: "enum",
+        enum: Genre,
+    })
+    genre: Genre;
 }

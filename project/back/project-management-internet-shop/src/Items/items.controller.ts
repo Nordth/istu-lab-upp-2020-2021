@@ -11,7 +11,12 @@ export class ItemsController {
     ) { }
 
     @Get()
-    GetAllItems() : Promise<Items[]> {
+    GetAllItems(@Query() qu): Promise<Items[]> {
+        if (Object.keys(qu).length !== 0) {
+            var {genre, description} = qu;
+            return this.ItemsService.findAllWithParams(genre, description);
+        }
+        
         return this.ItemsService.getAll();
     }
 

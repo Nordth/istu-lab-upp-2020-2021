@@ -13,6 +13,19 @@ export class ItemsRepository extends Repository<Items> {
         a.title = item.title;
         a.price = item.price;
         a.description = item.description;
+        a.genre = item.genre;
         a.save();
+    }
+
+    async findAllWithParams(genre, description): Promise<Items[]> {
+        var query = this.createQueryBuilder("items");
+        if (genre) {
+            query = query.where("items.genre = :g", { g: genre });
+        }
+        if (description && description !== ""){
+            query = query.andWhere("LOWER(items.description) LIKE LOWER(:d)", { d: `%${description}%` });
+        }
+
+        return await query.getMany();
     }
 }

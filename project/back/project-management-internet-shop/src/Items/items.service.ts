@@ -15,6 +15,10 @@ export class ItemsService {
         return await this.itemsRepository.getAll();
     }
 
+    async findAllWithParams(genre, description): Promise<Items[]> {
+        return await this.itemsRepository.findAllWithParams(genre, description);
+    }
+
     async createOne(item: ItemDto) {
         this.itemsRepository.createItem(item);
     }
