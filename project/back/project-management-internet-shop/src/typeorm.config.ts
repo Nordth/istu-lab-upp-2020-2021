@@ -1,12 +1,18 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm'
 import { Credentials } from './credentials'
 
-export const TypeOrmConfig : TypeOrmModuleOptions = {
+export const TypeOrmConfig: TypeOrmModuleOptions = {
     type: 'postgres',
-    host: 'localhost',
+    host: Credentials.host,
     username: Credentials.username,
     password: Credentials.password,
     database: Credentials.database,
     entities: [__dirname + '/./**/*.entity.{js,ts}'],
-    synchronize: true
+    synchronize: true,
+    ssl: true,
+    extra: {
+        ssl: {
+            rejectUnauthorized: false,
+        },
+    },
 }

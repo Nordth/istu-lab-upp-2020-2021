@@ -1,4 +1,4 @@
-import { Controller, Get, Body, Post, ValidationPipe, BadRequestException, Query } from '@nestjs/common';
+import { Controller, Get, Body, Post, ValidationPipe, BadRequestException, Query, Delete } from '@nestjs/common';
 import { ItemsService } from './Items.service';
 import { Items } from './Items.entity';
 import { isUndefined } from 'util';
@@ -13,10 +13,10 @@ export class ItemsController {
     @Get()
     GetAllItems(@Query() qu): Promise<Items[]> {
         if (Object.keys(qu).length !== 0) {
-            var {genre, description} = qu;
+            var { genre, description } = qu;
             return this.ItemsService.findAllWithParams(genre, description);
         }
-        
+
         return this.ItemsService.getAll();
     }
 
@@ -27,5 +27,15 @@ export class ItemsController {
         } else {
             throw new BadRequestException();
         }
+    }
+
+    @Post('/createarray')
+    CreateArray(@Body() items: ItemDto[]) {
+        this.ItemsService.createFromArray(items)
+    }
+
+    @Delete()
+    DropTable() {
+        this.ItemsService.dropTable();
     }
 }

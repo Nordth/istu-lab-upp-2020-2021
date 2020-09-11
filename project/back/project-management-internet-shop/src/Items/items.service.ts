@@ -11,7 +11,7 @@ export class ItemsService {
         private itemsRepository: ItemsRepository
     ) { }
 
-    async getAll() : Promise<Items[]> {
+    async getAll(): Promise<Items[]> {
         return await this.itemsRepository.getAll();
     }
 
@@ -21,5 +21,13 @@ export class ItemsService {
 
     async createOne(item: ItemDto) {
         this.itemsRepository.createItem(item);
+    }
+
+    async createFromArray(items: ItemDto[]): Promise<void> {
+        items.forEach(item => { this.createOne(item) })
+    }
+
+    async dropTable() {
+        this.itemsRepository.clear();
     }
 }
