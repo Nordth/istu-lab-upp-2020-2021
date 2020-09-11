@@ -2,9 +2,12 @@ import { Entity, BaseEntity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 export enum Genre {
     ACTION = "action",
-    ROLEPLAY = "roleplay",
-    STRATEGY = "strategy",
-    SIMULATOR = "simulator",
+	STRATEGY = "strategy",
+	SPORTS = "sports",
+	SIMULATION = "simulation",
+	RACE = "race",
+	ADVENTURE = "adventure",
+    RPG = "rpg",
     OTHER = "other",
 }
 
