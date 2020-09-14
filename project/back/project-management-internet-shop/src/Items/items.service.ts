@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { ItemsRepository } from './items.repository';
 import { Items } from './items.entity';
 import { ItemDto } from './item.dto';
+import { PaginationOptions } from './pagination.options';
 
 @Injectable()
 export class ItemsService {
@@ -11,8 +12,8 @@ export class ItemsService {
         private itemsRepository: ItemsRepository
     ) { }
 
-    async getAll(): Promise<Items[]> {
-        return await this.itemsRepository.getAll();
+    async getAll(paginationOptions: PaginationOptions): Promise<Items[]> {
+        return await this.itemsRepository.getAll(paginationOptions);
     }
 
     async findAllWithParams(genre, description): Promise<Items[]> {
@@ -29,5 +30,16 @@ export class ItemsService {
 
     async dropTable() {
         this.itemsRepository.clear();
+    }
+
+    async findByPage(page: number, limit: number): Promise<ItemDto[]> {
+        // return this.itemsRepository.findByIds(
+        //     new Array(limit).fill(startId).map((v, index) => v + index)
+        // )
+
+        return this.itemsRepository.find({
+            skip: page * limit,
+            take: limit
+        })
     }
 }

@@ -9,10 +9,10 @@ export const TypeOrmConfig: TypeOrmModuleOptions = {
     database: Credentials.database,
     entities: [__dirname + '/./**/*.entity.{js,ts}'],
     synchronize: true,
-    ssl: true,
-    extra: {
-        ssl: {
-            rejectUnauthorized: false,
-        },
-    },
+    // ssl: true,
+    // extra: {
+    //     ssl: {
+    //         rejectUnauthorized: false,
+    //     },
+    // },
 }

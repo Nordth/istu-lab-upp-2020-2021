@@ -1,11 +1,15 @@
 import { EntityRepository, Repository, Double } from "typeorm";
 import { Items } from "./items.entity";
 import { ItemDto } from "./item.dto";
+import { PaginationOptions } from "./pagination.options";
 
 @EntityRepository(Items)
 export class ItemsRepository extends Repository<Items> {
-    async getAll(): Promise<Items[]> {
-        return await this.find();
+    async getAll(paginationOptions: PaginationOptions): Promise<Items[]> {
+        return await this.find({
+            take: paginationOptions.limit,
+            skip: paginationOptions.skip
+        });
     }
 
     async createItem(item: ItemDto): Promise<void> {
