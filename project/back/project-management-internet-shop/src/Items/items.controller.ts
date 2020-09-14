@@ -1,6 +1,5 @@
 import { Controller, Get, Body, Post, ValidationPipe, BadRequestException, Query, Delete } from '@nestjs/common';
 import { ItemsService } from './Items.service';
-import { Items } from './Items.entity';
 import { ItemDto } from './item.dto';
 import { PaginationOptions } from './pagination.options';
 import { ItemsResponce } from './items.response';
@@ -19,7 +18,7 @@ export class ItemsController {
         if (genre || description) {
             responce.items = await this.ItemsService.findAllWithParams(genre, description)
                 .then(arr => {
-                    responce.pages = arr.length;
+                    responce.pages = Math.floor(arr.length / parseInt(limit));
                     return arr.splice(page * limit, limit)
                 });
         } else {
