@@ -16,6 +16,10 @@ export class ItemsService {
         return await this.itemsRepository.getAll(paginationOptions);
     }
 
+    async countAll() : Promise<number> {
+        return await this.itemsRepository.count();
+    }
+
     async findAllWithParams(genre, description): Promise<Items[]> {
         return await this.itemsRepository.findAllWithParams(genre, description);
     }

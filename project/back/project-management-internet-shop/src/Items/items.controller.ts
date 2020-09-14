@@ -3,6 +3,7 @@ import { ItemsService } from './Items.service';
 import { Items } from './Items.entity';
 import { ItemDto } from './item.dto';
 import { PaginationOptions } from './pagination.options';
+import { ItemsResponce } from './items.response';
 
 @Controller('items')
 export class ItemsController {
@@ -11,16 +12,25 @@ export class ItemsController {
     ) { }
 
     @Get()
-    GetAllItems(@Query() qu): Promise<Items[]> {
+    async GetAllItems(@Query() qu): Promise<ItemsResponce> {
+        const responce = new ItemsResponce();
         var { genre, description, page, limit } = qu;
 
         if (genre || description) {
-            return this.ItemsService.findAllWithParams(genre, description).then(arr => {
-                return arr.splice(page * limit, limit)
-            });
+            responce.items = await this.ItemsService.findAllWithParams(genre, description)
+                .then(arr => {
+                    responce.pages = arr.length;
+                    return arr.splice(page * limit, limit)
+                });
+        } else {
+            responce.items = await this.ItemsService.getAll(new PaginationOptions(page, limit));
+            responce.pages = Math.floor(await this.ItemsService.countAll() / parseInt(limit));
         }
 
-        return this.ItemsService.getAll(new PaginationOptions(page, limit));
+        responce.genre = genre;
+        responce.descQuery = description;
+
+        return responce;
     }
 
     @Post('/create')
