@@ -4,6 +4,16 @@ header {
     align-items: center;
 }
 
+main {
+    display: grid;
+    grid-template: auto / 20% 1fr;
+}
+
+footer {
+    grid-column: span 2;
+    text-align: center;
+}
+
 .item-tile {
     margin: 10px;
     padding: 10px;
