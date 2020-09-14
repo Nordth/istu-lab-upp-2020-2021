@@ -31,15 +31,4 @@ export class ItemsService {
     async dropTable() {
         this.itemsRepository.clear();
     }
-
-    async findByPage(page: number, limit: number): Promise<ItemDto[]> {
-        // return this.itemsRepository.findByIds(
-        //     new Array(limit).fill(startId).map((v, index) => v + index)
-        // )
-
-        return this.itemsRepository.find({
-            skip: page * limit,
-            take: limit
-        })
-    }
 }
