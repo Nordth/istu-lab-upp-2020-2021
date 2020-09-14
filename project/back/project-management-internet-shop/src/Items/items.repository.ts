@@ -28,6 +28,7 @@ export class ItemsRepository extends Repository<Items> {
         }
         if (description && description !== ""){
             query = query.andWhere("LOWER(items.description) LIKE LOWER(:d)", { d: `%${description}%` });
+            query = query.orWhere("LOWER(items.title) LIKE LOWER(:d)", { d: `%${description}%` })
         }
 
         return await query.getMany();
