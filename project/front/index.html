@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="src/styles.css">
 </head>
 
-<body>
+<body onload="getItems('', '', PAGE, LIMIT)">
     <header>
         <div class="logo">
             <h1>Soft web store</h1>
@@ -19,25 +19,22 @@
     <main>
         <nav class="nav">
             <ul class="list">
-                <li class="item"> <a href="">Экшн</a></li>
-                <li class="item"> <a href="">Ролевые</a></li>
-                <li class="item"> <a href="">Приключения</a></li>
-                <li class="item"> <a href="">Стратегии</a></li>
-                <li class="item"> <a href="">Симуляторы</a></li>
-                <li class="item"> <a href="">Онлайн</a></li>
-                <li class="item"> <a href="">Инди</a></li>
-                <li class="item"> <a href="">Спорт</a></li>
-                <li class="item"> <a href="">Казуальные</a>
-                </li>
-                <li class="item"> <a href="">Гонки</a></li>
+                <li class="item"> <a onclick="getItems('action', '', PAGE, LIMIT)">Экшн</a></li>
+                <li class="item"> <a onclick="getItems('rpg', '', PAGE, LIMIT)">Ролевые</a></li>
+                <li class="item"> <a onclick="getItems('adventure', '', PAGE, LIMIT)">Приключения</a></li>
+                <li class="item"> <a onclick="getItems('strategy', '', PAGE, LIMIT)">Стратегии</a></li>
+                <li class="item"> <a onclick="getItems('simulation', '', PAGE, LIMIT)">Симуляторы</a></li>
+                <li class="item"> <a onclick="getItems('race', '', PAGE, LIMIT)">Гонки</a></li>
+                <li class="item"> <a onclick="getItems('sports', '', PAGE, LIMIT)">Спорт</a></li>
+                <li class="item"> <a onclick="getItems('other', '', PAGE, LIMIT)">Другие</a></li>
                 <ul class="list">
-                    <li class="item"> <a href="">Все игры</a></li>
+                    <li class="item"> <a onclick="getItems('', '', PAGE, LIMIT)">Все игры</a></li>
                 </ul>
             </ul>
         </nav>
         <div class="wrapper">
             <div class="items-container">
-                <div class="item-tile">
+                <!-- <div class="item-tile">
                     <div class="item-tile_top">
                         <img class="cover" src="./resources/GTAV.jpg" alt="">
                         <div class="sticker"></div>
@@ -47,14 +44,19 @@
                             <div class="price">19.99</div>
                         </div>
                     </div>
-                </div>
+                </div> -->
+            </div>
+            <div class="pages">
+                <div class="page">0</div>
+                <div class="page">1</div>
+                <div class="page">2</div>
             </div>
         </div>
         <footer>
             <div class="contact">+7(999)2345-945</div>
         </footer>
     </main>
-    <script src="src/main.js"></script>
+    <script src="./src/main.js"></script>
 </body>
 
 </html>
