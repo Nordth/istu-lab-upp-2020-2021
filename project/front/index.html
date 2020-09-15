@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="src/styles.css">
 </head>
 
-<body onload="getItems('', '', PAGE, LIMIT)">
+<body onload="getItems('', '', 0, LIMIT)">
     <header>
         <div class="logo">
             <h1>Soft web store</h1>
@@ -19,16 +19,16 @@
     <main>
         <nav class="nav">
             <ul class="list">
-                <li class="item"> <a onclick="getItems('action', '', PAGE, LIMIT)">Экшн</a></li>
-                <li class="item"> <a onclick="getItems('rpg', '', PAGE, LIMIT)">Ролевые</a></li>
-                <li class="item"> <a onclick="getItems('adventure', '', PAGE, LIMIT)">Приключения</a></li>
-                <li class="item"> <a onclick="getItems('strategy', '', PAGE, LIMIT)">Стратегии</a></li>
-                <li class="item"> <a onclick="getItems('simulation', '', PAGE, LIMIT)">Симуляторы</a></li>
-                <li class="item"> <a onclick="getItems('race', '', PAGE, LIMIT)">Гонки</a></li>
-                <li class="item"> <a onclick="getItems('sports', '', PAGE, LIMIT)">Спорт</a></li>
-                <li class="item"> <a onclick="getItems('other', '', PAGE, LIMIT)">Другие</a></li>
+                <li class="item"> <a onclick="getItems('action', '', 0, LIMIT)">Экшн</a></li>
+                <li class="item"> <a onclick="getItems('rpg', '', 0, LIMIT)">Ролевые</a></li>
+                <li class="item"> <a onclick="getItems('adventure', '', 0, LIMIT)">Приключения</a></li>
+                <li class="item"> <a onclick="getItems('strategy', '', 0, LIMIT)">Стратегии</a></li>
+                <li class="item"> <a onclick="getItems('simulation', '', 0, LIMIT)">Симуляторы</a></li>
+                <li class="item"> <a onclick="getItems('race', '', 0, LIMIT)">Гонки</a></li>
+                <li class="item"> <a onclick="getItems('sports', '', 0, LIMIT)">Спорт</a></li>
+                <li class="item"> <a onclick="getItems('other', '', 0, LIMIT)">Другие</a></li>
                 <ul class="list">
-                    <li class="item"> <a onclick="getItems('', '', PAGE, LIMIT)">Все игры</a></li>
+                    <li class="item"> <a onclick="getItems('', '', 0, LIMIT)">Все игры</a></li>
                 </ul>
             </ul>
         </nav>

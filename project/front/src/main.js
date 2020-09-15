@@ -14,7 +14,6 @@ const pagesContainer = document.querySelector('.pages')
 const searchContainer = document.querySelector('.search')
 
 let LIMIT = 20
-let PAGE = 0
 let MAXPAGE = 1
 let GENRE = ''
 
@@ -35,7 +34,6 @@ function getItems(genre, description, page, limit) {
     fetch(`http://localhost:3000/items?genre=${isGenre(genre) ? genre : ''}&description=${description}&page=${page}&limit=${limit}`, requestOptions)
         .then(response => response.json())
         .then(result => {
-            console.log(result);
             itemsContainer.innerHTML = parseItemsToHtml(result)
         })
         .catch(error => console.log('error', error));
@@ -76,8 +74,7 @@ function claculatePages(maxPages) {
 }
 
 pagesContainer.addEventListener('click', (click) => {
-    PAGE = parseInt(click.target.innerText);
-    getItems(GENRE, '', PAGE, LIMIT);
+    getItems(GENRE, '', parseInt(click.target.innerText), LIMIT);
 })
 
 searchContainer.querySelector('button').addEventListener('click', () => {
