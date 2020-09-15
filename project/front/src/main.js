@@ -93,7 +93,7 @@ function parseItemsToHtml(itemsJson) {
                     <div class="genre">${item.genre}</div>
                     <div class="price">
                         <span>${item.price} $</span>
-                        <span><button onclick="addToCart()">купить</button></span>
+                        <span><button onclick="addToCart(this)">купить</button></span>
                     </div>
                 </div>
             </div>
