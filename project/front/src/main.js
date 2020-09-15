@@ -14,28 +14,33 @@ const pagesContainer = document.querySelector('.pages')
 const searchContainer = document.querySelector('.search')
 const cartContainer = document.querySelector('.cart-container ul')
 const cartButton = document.querySelector('.cart-title')
+const summContainer = document.querySelector('.summ')
 
 let LIMIT = 20
 let MAXPAGE = 1
 let GENRE = ''
 
 function Cart() {
+    let items;
+
     if (!sessionStorage.getItem('cart')) {
         sessionStorage.setItem('cart', '[]');
+        items = [];
+    } else {
+        items = JSON.parse(sessionStorage.getItem('cart'))
     }
 
     return {
         addItem: (name, genre, price) => {
-            let items = JSON.parse(sessionStorage.getItem('cart'));
             items.push({
                 name: name,
                 genre: genre,
                 price: price
             });
+
             sessionStorage.setItem('cart', JSON.stringify(items));
         },
         removeItem: (name, genre, price) => {
-            let items = JSON.parse(sessionStorage.getItem('cart'));
             for (let i of items.keys()) {
                 if (items[i].name === name
                     && items[i].genre === genre
@@ -49,6 +54,14 @@ function Cart() {
         },
         getAll: () => {
             return JSON.parse(sessionStorage.getItem('cart'));
+        },
+        count: () => {
+            return items.length
+        },
+        calculateTotal: () => {
+            return items.reduce((sum, i) => {
+                return sum + parseFloat(i.price)
+            }, 0).toFixed(2)
         }
     }
 }
@@ -152,6 +165,10 @@ function refreshCartContainer() {
     cartContainer.innerHTML = CART.getAll().reduce((cartHTML, item) => {
         return cartHTML += createCartItem(item.name, item.genre, item.price);
     }, '')
+
+    summContainer.innerText = 'Сумма: ' + CART.calculateTotal();
+
+    cartButton.lastElementChild.innerText = CART.count();
 }
 
 function addToCart(element) {
