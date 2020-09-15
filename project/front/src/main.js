@@ -13,6 +13,7 @@ const itemsContainer = document.querySelector('.items-container')
 const pagesContainer = document.querySelector('.pages')
 const searchContainer = document.querySelector('.search')
 const cartContainer = document.querySelector('.cart-container ul')
+const cartButton = document.querySelector('.cart-title')
 
 let LIMIT = 20
 let MAXPAGE = 1
@@ -60,6 +61,11 @@ function isGenre(str) {
     }, false)
 }
 
+function firstStart() {
+    getItems('', '', 0, LIMIT);
+    refreshCartContainer();
+}
+
 function getItems(genre, description, page, limit) {
     if (genre && genre !== '') GENRE = GenreList[genre.toUpperCase()]
 
@@ -74,6 +80,7 @@ function getItems(genre, description, page, limit) {
             itemsContainer.innerHTML = parseItemsToHtml(result)
         })
         .catch(error => console.log('error', error));
+    
 }
 
 function parseItemsToHtml(itemsJson) {
@@ -120,6 +127,15 @@ pagesContainer.addEventListener('click', (click) => {
 searchContainer.querySelector('button').addEventListener('click', () => {
     const searchWord = searchContainer.querySelector('input').value
     getItems('', searchWord, 0, LIMIT)
+})
+
+cartButton.addEventListener('click', () => {
+    var display = cartContainer.parentElement.style.display;
+    if (display == 'none') {
+        cartContainer.parentElement.style.display = 'block'
+    } else {
+        cartContainer.parentElement.style.display = 'none'
+    }
 })
 
 function refreshCartContainer() {
