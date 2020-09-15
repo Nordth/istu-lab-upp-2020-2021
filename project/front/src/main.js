@@ -12,10 +12,47 @@ const GenreList = Object.freeze({
 const itemsContainer = document.querySelector('.items-container')
 const pagesContainer = document.querySelector('.pages')
 const searchContainer = document.querySelector('.search')
+const cartContainer = document.querySelector('.cart-container ul')
 
 let LIMIT = 20
 let MAXPAGE = 1
 let GENRE = ''
+
+function Cart() {
+    if (!sessionStorage.getItem('cart')) {
+        sessionStorage.setItem('cart', '[]');
+    }
+
+    return {
+        addItem: (name, genre, price) => {
+            let items = JSON.parse(sessionStorage.getItem('cart'));
+            items.push({
+                name: name,
+                genre: genre,
+                price: price
+            });
+            sessionStorage.setItem('cart', JSON.stringify(items));
+        },
+        removeItem: (name, genre, price) => {
+            let items = JSON.parse(sessionStorage.getItem('cart'));
+            for (let i of items.keys()) {
+                if (items[i].name === name
+                    && items[i].genre === genre
+                    && items[i].price === price) {
+                    items.splice(i, 1)
+                    break;
+                }
+            }
+
+            sessionStorage.setItem('cart', JSON.stringify(items));
+        },
+        getAll: () => {
+            return JSON.parse(sessionStorage.getItem('cart'));
+        }
+    }
+}
+
+const CART = Cart();
 
 function isGenre(str) {
     return Object.keys(GenreList).reduce((reducer, key) => {
@@ -26,7 +63,7 @@ function isGenre(str) {
 function getItems(genre, description, page, limit) {
     if (genre && genre !== '') GENRE = GenreList[genre.toUpperCase()]
 
-    var requestOptions = {
+    const requestOptions = {
         method: 'GET',
         redirect: 'follow'
     };
@@ -54,7 +91,10 @@ function parseItemsToHtml(itemsJson) {
                 <div class="item-tile_bottom">
                     <div class="name">${item.title}</div>
                     <div class="genre">${item.genre}</div>
-                    <div class="price">${item.price} $</div>
+                    <div class="price">
+                        <span>${item.price} $</span>
+                        <span><button onclick="addToCart()">купить</button></span>
+                    </div>
                 </div>
             </div>
         </div>\n`
@@ -68,7 +108,7 @@ function claculatePages(maxPages) {
 
     pagesContainer.innerHTML = '';
 
-    for (var i = 0; i < maxPages; i++) {
+    for (let i = 0; i < maxPages; i++) {
         pagesContainer.innerHTML += createPage(i);
     }
 }
@@ -78,6 +118,41 @@ pagesContainer.addEventListener('click', (click) => {
 })
 
 searchContainer.querySelector('button').addEventListener('click', () => {
-    var searchWord = searchContainer.querySelector('input').value
+    const searchWord = searchContainer.querySelector('input').value
     getItems('', searchWord, 0, LIMIT)
 })
+
+function refreshCartContainer() {
+    function createCartItem(name, genre, price) {
+        return `
+        <li class="cart-item">
+            <span class="name">${name}</span>
+            <span class="genre">${genre}</span>
+            <span class="price">${price}</span>
+            <button onclick="removefromCart(this)">x</button>
+        </li>\n`
+    }
+
+    cartContainer.innerHTML = CART.getAll().reduce((cartHTML, item) => {
+        return cartHTML += createCartItem(item.name, item.genre, item.price);
+    }, '')
+}
+
+function addToCart(element) {
+    const itemParams = element.parentElement.parentElement.parentElement.innerText.split('\n');
+    CART.addItem(itemParams[0], itemParams[1], itemParams[2].split(' ')[0])
+    refreshCartContainer();
+}
+
+function removefromCart(element) {
+    const itemParams = element.parentElement;
+
+    CART.removeItem(
+        itemParams.querySelector('.name').innerText,
+        itemParams.querySelector('.genre').innerText,
+        itemParams.querySelector('.price').innerText
+    );
+    refreshCartContainer();
+}
+
+

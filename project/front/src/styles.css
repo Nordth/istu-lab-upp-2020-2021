@@ -56,3 +56,22 @@ li a:hover {
     cursor: pointer;
     background-color: aqua;
 }
+
+.cart-title {
+    background-color: beige;
+    padding: 20px;
+}
+
+.cart-title:hover {
+    cursor: pointer;
+}
+
+.cart-container {
+    position: absolute;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.cart-container li {
+    text-decoration: none;
+}
