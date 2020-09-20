@@ -4,19 +4,47 @@ header {
     align-items: center;
 }
 
+body {
+    font-family: "Century Gothic", sans-serif, Arial, "Trebuchet MS", verdana;
+    color: #fff;
+    margin: 0px;
+    background: #1d1d1d;
+}
+
 main {
     display: grid;
     grid-template: auto / 20% 1fr;
+    width: 90%;
+    margin: auto;
+}
+
+nav {
+    font-size: 26px;
+}
+
+nav li {
+    margin: 0 0 10px 0;
 }
 
 footer {
+    margin: 10px 0;
+    padding: 10px 0;
     grid-column: span 2;
     text-align: center;
 }
 
+button {
+    background-color: #333;
+    margin: 0 0 0 20px;
+    color: #fff;
+    font-family: "Century Gothic", sans-serif, Arial, "Trebuchet MS", verdana;
+    border: 1px black solid;
+    cursor: pointer;
+}
+
 li a:hover {
     cursor: pointer;
-    background-color: red;
+    background-color: #9c9c9cf2;
 }
 
 .item-tile {
@@ -24,8 +52,12 @@ li a:hover {
     padding: 10px;
     width: min-content;
     display: flex;
-    border: 1px solid black;
-    border-radius: 10%;
+    border-radius: 5px;
+    background: #242424;
+}
+
+.item-tile:hover {
+    background: #333;
 }
 
 .items-container {
@@ -38,10 +70,12 @@ li a:hover {
 
 .cover {
     width: 150px;
+    height: 180px;
 }
 
 .pages {
-    width: 200px;
+    width: 100%;
+    margin: 0 20px;
     display: flex;
     overflow: auto;
 }
@@ -54,11 +88,11 @@ li a:hover {
 
 .page:hover {
     cursor: pointer;
-    background-color: aqua;
+    background-color: #9c9c9cf2;
 }
 
 .cart-title {
-    background-color: beige;
+    background-color: #242424;
     padding: 20px;
 }
 
@@ -67,8 +101,9 @@ li a:hover {
 }
 
 .cart-container {
-    position: absolute;
-    background-color: lime;
+    position: fixed;
+    background-color: #9c9c9cf2;
+    color: #000;
     border: 1px solid black;
     padding: 10px;
 }
