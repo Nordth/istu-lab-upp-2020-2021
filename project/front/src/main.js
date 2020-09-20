@@ -109,7 +109,7 @@ function parseItemsToHtml(itemsJson) {
                 <img class="cover" src="./resources/GTAV.jpg" alt="">
                 <div class="sticker"></div>
                 <div class="item-tile_bottom">
-                    <div class="name">${item.title}</div>
+                    <div class="item-name">${item.title}</div>
                     <div class="genre">${item.genre}</div>
                     <div class="price">
                         <span>${item.price} $</span>
@@ -155,7 +155,7 @@ function refreshCartContainer() {
     function createCartItem(name, genre, price) {
         return `
         <li class="cart-item">
-            <span class="name">${name}</span>
+            <span class="cart-name">${name}</span>
             <span class="genre">${genre}</span>
             <span class="price">${price}</span>
             <button onclick="removefromCart(this)">x</button>

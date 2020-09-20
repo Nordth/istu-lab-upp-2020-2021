@@ -76,3 +76,11 @@ li a:hover {
 .cart-container li {
     text-decoration: none;
 }
+
+.item-name {
+    height: 5em;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
