@@ -16,7 +16,7 @@ const cartContainer = document.querySelector('.cart-container ul')
 const cartButton = document.querySelector('.cart-title')
 const summContainer = document.querySelector('.summ')
 
-let LIMIT = 20
+let LIMIT = 12
 let MAXPAGE = 1
 let GENRE = ''
 
@@ -134,7 +134,8 @@ function claculatePages(maxPages) {
 }
 
 pagesContainer.addEventListener('click', (click) => {
-    getItems(GENRE, '', parseInt(click.target.innerText), LIMIT);
+    if (click.target.innerText.length < 3)
+        getItems(GENRE, '', parseInt(click.target.innerText), LIMIT);
 })
 
 searchContainer.querySelector('button').addEventListener('click', () => {
