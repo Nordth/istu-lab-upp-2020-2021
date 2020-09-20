@@ -181,7 +181,7 @@ function removefromCart(element) {
     const itemParams = element.parentElement;
 
     CART.removeItem(
-        itemParams.querySelector('.name').innerText,
+        itemParams.querySelector('.cart-name').innerText,
         itemParams.querySelector('.genre').innerText,
         itemParams.querySelector('.price').innerText
     );
