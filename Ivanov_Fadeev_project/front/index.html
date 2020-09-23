@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="shortcut icon" href="./resources/favicon.ico" type="image/x-icon">
+</head>
+
+<body onload="firstStart()">
+<!-- <body> -->
+    <header>
+        <div class="logo">
+            <h1>Soft web store</h1>
+        </div>
+        <div class="search"><input type="text" placeholder="Input" name="" id=""><button>Search</button></div>
+        <div class="user-short">LOGO</div>
+        <div class="cart">
+            <div class="cart-title">Моя корзина / <span></span> / </div>
+            <div class="cart-container">
+                <ul>
+                    <!-- <li class="cart-item">
+                        <span class="name">GTA V</span>
+                        <span class="genre">Shooter</span>
+                        <span class="price">19.99</span>
+                        <button onclick="removefromCart(this)">x</button>
+                    </li> -->
+                </ul>
+                <span class="summ">Сумма: 00.00</span><span>$</span>
+                <button>Оформить заказ</button>
+            </div>
+            
+        </div>
+
+    </header>
+    <main>
+        <nav class="nav">
+            <ul class="list">
+                <li class="item"> <a onclick="getItems('action', '', 0, LIMIT)">Экшн</a></li>
+                <li class="item"> <a onclick="getItems('rpg', '', 0, LIMIT)">Ролевые</a></li>
+                <li class="item"> <a onclick="getItems('adventure', '', 0, LIMIT)">Приключения</a></li>
+                <li class="item"> <a onclick="getItems('strategy', '', 0, LIMIT)">Стратегии</a></li>
+                <li class="item"> <a onclick="getItems('simulation', '', 0, LIMIT)">Симуляторы</a></li>
+                <li class="item"> <a onclick="getItems('race', '', 0, LIMIT)">Гонки</a></li>
+                <li class="item"> <a onclick="getItems('sports', '', 0, LIMIT)">Спорт</a></li>
+                <li class="item"> <a onclick="getItems('other', '', 0, LIMIT)">Другие</a></li>
+                <ul class="list">
+                    <li class="item"> <a onclick="getItems('', '', 0, LIMIT)">Все игры</a></li>
+                </ul>
+            </ul>
+        </nav>
+        <div class="wrapper">
+            <div class="items-container">
+                <!-- <div class="item-tile">
+                    <div class="item-tile_top">
+                        <img class="cover" src="./resources/GTAV.jpg" alt="">
+                        <div class="sticker"></div>
+                        <div class="item-tile_bottom">
+                            <div class="name">GTA V</div>
+                            <div class="genre">Shooter</div>
+                            <div class="price">
+                                <span>19.99</span>
+                                <span>$</span>
+                                <span><button onclick="addToCart(this)">купить</button></span>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="pages">
+                <div class="page">0</div>
+                <div class="page">1</div>
+                <div class="page">2</div>
+            </div>
+        </div>
+        <footer>
+            <div class="contact">+7(999)2345-945</div>
+        </footer>
+    </main>
+    <script src="./src/main.js"></script>
+</body>
+
+</html>
