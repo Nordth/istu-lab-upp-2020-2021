@@ -2,3 +2,4 @@
 |---------|:-------:|:-------:|:-------:|:-----------------:
 |Afrilearning | ✔ |   |   |   |
 |Ivanov_Fadeev| ✔ |   |   |   |
+|Gavrilov_Akhlamov_Chat-roulette| ✔ |   |   |   |
