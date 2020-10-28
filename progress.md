@@ -7,3 +7,4 @@
 |Vereshchak_TipsForDrips| ✔ |   |   |   |
 |SentyakovaMA_GafinaYA_StaroStats| ✔ |   |   |   |
 |БаженовДВ_ДресвянниковаАА_трекер| ✔ |   |   |   |
+|Тихонов, Нечеухина| ✔ |   |   |   |
