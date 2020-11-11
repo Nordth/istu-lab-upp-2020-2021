@@ -5,7 +5,7 @@
 |Gavrilov_Akhlamov_Chat-roulette| ✔ |   |   |   |
 |Елесина_Овсейко_DarkCript| ✔ |   |   |   |
 |Vereshchak_TipsForDrips| ✔ |   |   |   |
-|SentyakovaMA_GafinaYA_StaroStats| ✔ |   |   |   |
+|SentyakovaMA_GafinaYA_StaroStats| ✔ | ✔ |   |   |
 |БаженовДВ_ДресвянниковаАА_трекер| ✔ |   |   |   |
 |Тихонов, Нечеухина| ✔ |   |   |   |
 |Миронова_Моисеева_ГдеМоиДеньги| ✔ |   |   |   |
