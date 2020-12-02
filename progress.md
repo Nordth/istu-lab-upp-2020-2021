@@ -1,7 +1,7 @@
 | Проект  | Лаб. №1 | Лаб. №2 | Лаб. №3 | Допуск к экзамену
 |---------|:-------:|:-------:|:-------:|:-----------------:
-|Afrilearning | ✔ |   |   |   |
-|Ivanov_Fadeev| ✔ | ✔  |   |   |
+|Afrilearning | ✔ | ✔ |   |   |
+|Ivanov_Fadeev| ✔ | ✔ |   |   |
 |Gavrilov_Akhlamov_Chat-roulette| ✔ | ✔ |   |   |
 |Елесина_Овсейко_DarkCript| ✔ |   |   |   |
 |Vereshchak_TipsForDrips| ✔ |   |   |   |
