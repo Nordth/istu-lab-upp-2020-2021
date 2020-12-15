@@ -10,6 +10,6 @@
 |Тихонов, Нечеухина| ✔ | ✔ | ✔ | 👍 |
 |Миронова_Моисеева_ГдеМоиДеньги| ✔ | ✔ | ✔ | 👍 |
 |МашаевАА_ШмыринДИ_Step_Invaders| ✔ | ✔ | ✔ | 👍 |
-|startsev_mashkantsev_family_messenger|✔ |   |   |   |
+|startsev_mashkantsev_family_messenger|✔ |   | ✔ |   |
 |Ketris_Vovk_PuzzleAlarm| ✔ | ✔ |   |   |
 |Rusaeva_SlowSales24| ✔ | ✔ |   |   |
