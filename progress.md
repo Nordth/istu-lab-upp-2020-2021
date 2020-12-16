@@ -4,7 +4,7 @@
 |Ivanov_Fadeev| ✔ | ✔ | ✔ | 👍 |
 |Gavrilov_Akhlamov_Chat-roulette| ✔ | ✔ | ✔ | 👍 |
 |Елесина_Овсейко_DarkCript| ✔ | ✔ |   |   |
-|Vereshchak_TipsForDrips| ✔ | ✔ |   |   |
+|Vereshchak_TipsForDrips| ✔ | ✔ | ✔ | 👍 |
 |SentyakovaMA_GafinaYA_StaroStats| ✔ | ✔ | ✔ | 👍 |
 |БаженовДВ_ДресвянниковаАА_трекер| ✔ | ✔ | ✔ | 👍 |
 |Тихонов, Нечеухина| ✔ | ✔ | ✔ | 👍 |
