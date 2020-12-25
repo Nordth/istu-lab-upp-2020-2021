@@ -3,7 +3,7 @@
 |Afrilearning | ✔ | ✔ | ✔ | 👍 |
 |Ivanov_Fadeev| ✔ | ✔ | ✔ | 👍 |
 |Gavrilov_Akhlamov_Chat-roulette| ✔ | ✔ | ✔ | 👍 |
-|Елесина_Овсейко_DarkCript| ✔ | ✔ |  ✔ | ✔ | 👍 |
+|Елесина_Овсейко_DarkCript| ✔ | ✔ |  ✔ | 👍 |
 |Vereshchak_TipsForDrips| ✔ | ✔ | ✔ | 👍 |
 |SentyakovaMA_GafinaYA_StaroStats| ✔ | ✔ | ✔ | 👍 |
 |БаженовДВ_ДресвянниковаАА_трекер| ✔ | ✔ | ✔ | 👍 |
@@ -12,4 +12,4 @@
 |МашаевАА_ШмыринДИ_Step_Invaders| ✔ | ✔ | ✔ | 👍 |
 |startsev_mashkantsev_family_messenger|✔ | ✔ | ✔ | 👍 |
 |Ketris_Vovk_PuzzleAlarm| ✔ | ✔ | ✔ | 👍 |
-|Rusaeva_SlowSales24| ✔ | ✔ |   |   |
+|Rusaeva_SlowSales24| ✔ | ✔ | ✔ | 👍 |
