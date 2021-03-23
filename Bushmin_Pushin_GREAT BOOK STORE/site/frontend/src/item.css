@@ -1,0 +1,12 @@
+.item-slider img {
+    height: 500px;
+    width: 400px;
+}
+
+.item-wrapper {
+    display: grid;
+    grid-template-columns: 40% auto;
+    grid-auto-flow: column;
+    width: 90%;
+    margin: 0 auto;
+}
