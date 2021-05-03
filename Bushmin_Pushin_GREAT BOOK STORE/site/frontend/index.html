@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="shortcut icon" href="./resources/favicon.ico" type="image/x-icon">
+</head>
+
+<body onload="firstStart()">
+    <!-- <body> -->
+    <header>
+        <div class="header-wrapper">
+        <div class="logo">
+            <h1>GREAT BOOK STORE</h1>
+        </div>
+        <div class="search"><input type="text" placeholder="Input" name=""><button type="submit" onclick="getItemsBySearch(0, LIMIT)">Search</button></div>
+        <div class="user-short" onclick="showLoginForm()">МОЯ УЧЕТКА</div>
+        <div class="cart">
+            <div class="cart-title">Моя корзина / <span></span> / </div>
+            <div class="cart-container">
+                <ul>
+                </ul>
+                <span class="summ">Сумма: 00.00</span><span>$</span>
+                <button onclick="showMakeOffer()">Оформить заказ</button>
+            </div>
+
+        </div>
+</div>
+    </header>
+
+    <div class="center-wrapper" id="offer-container" style="display: none;" onclick="hideCenterWrapper()">
+        <div class="offer" onclick="event.stopPropagation()">
+            <div class="offer-items-container">
+                <ul>
+                    <!-- <li>
+                        <span>Наименование товара</span>
+                        <span>19.99 $</span>
+                        <button>X</button>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="two-in-row">
+                <span>Промокод</span>
+                <input type="text" placeholder="Input" name="">
+            </div>
+            <div class="two-in-row">
+                <span>Номер карты</span>
+                <input type="text" placeholder="Input" name="">
+            </div>
+            <div class="two-in-row"><span>Конечная цена</span><span class="offer-cost" style="color: red;">1999.99
+                    $</span></div>
+            <button class="button-pay">Оплатить</button>
+        </div>
+    </div>
+    <div class="center-wrapper" id="login-container" style="display: none;" onclick="hideCenterWrapper()">
+        <div class="login" onclick="event.stopPropagation()">
+            <div class="two-in-row">
+                <span>Логин</span>
+                <input type="text" placeholder="Input" name="">
+            </div>
+            <div class="two-in-row">
+                <span>Пароль</span>
+                <input type="text" placeholder="Input" name="">
+            </div>
+            <div class="two-in-row">
+                <span>e-mail</span>
+                <input type="text" placeholder="Input" name="">
+            </div>
+            <div class="two-in-row">
+                <span>Имя</span>
+                <input type="text" placeholder="Input" name="">
+            </div>
+            <div class="two-in-row">
+                <span>Фото профиля</span>
+                <span><a href="#">Изображение</a></span>
+            </div>
+            <div class="two-in-row">
+                <button>Войти</button>
+                <button>Зарегистрироваться</button>
+            </div>
+        </div>
+    </div>
+    <div class="center-wrapper" id="contact-form" style="display: none;" onclick="hideCenterWrapper()">
+        <div class="contact-form" onclick="event.stopPropagation()">
+            <div class="grid-group_4x4">
+                <div class="two-in-row">
+                    <span>Имя</span>
+                    <input type="text" placeholder="Input" name="">
+                </div>
+                <div class="two-in-row">
+                    <span>e-mail</span>
+                    <input type="text" placeholder="Input" name="">
+                </div>
+                <div class="grid-group_4x4-right">
+                    <span>login</span>
+                    <a href="#">Изображение</a>
+                </div>
+            </div>
+            <div><textarea name="" id="" cols="30" rows="10">Сообщение</textarea></div>
+            <div><button>Отправить</button></div>
+        </div>
+    </div>
+    <div class="live-chat">
+        <div class="chat-controll" onclick="hideChat()">Скрыть чат</div>
+        <div class="chat-box">
+            <div class="chat-message message-right">Сообщение 1</div>
+            <div class="chat-message message-left">Сообщение 2</div>
+        </div>
+        <div class="two-in-row">
+            <input type="text" name="" placeholder="Сообщение">
+            <button onclick="sendMessage()">Отправить</button>
+        </div>
+    </div>
+    <main>
+        <div class="index-wrapper">
+            <nav class="nav">
+                <ul class="list">
+                    <li class="item"> <a onclick="getItemsByGenre(0, LIMIT, 'detective')">Детекивы</a></li>
+                    <li class="item"> <a onclick="getItemsByGenre(0, LIMIT, 'horror')">Хоррор</a></li>
+                    <li class="item"> <a onclick="getItemsByGenre(0, LIMIT, 'triller')">Триллеры</a></li>
+                    <li class="item"> <a onclick="getItemsByGenre(0, LIMIT, 'science')">Учебные</a></li>
+                    <ul class="list">
+                        <li class="item"> <a onclick="getItems(0, LIMIT)">Все жанры</a></li>
+                    </ul>
+                </ul>
+            </nav>
+            <div class="wrapper">
+                <div class="items-container">
+                    <!-- <div class="item-tile">
+                    <div class="item-tile_top">
+                        <img class="cover" src="./resources/GTAV.jpg" alt="">
+                        <div class="sticker"></div>
+                        <div class="item-tile_bottom">
+                            <div class="name">GTA V</div>
+                            <div class="genre">Shooter</div>
+                            <div class="price">
+                                <span>19.99</span>
+                                <span>$</span>
+                                <span><button onclick="addToCart(this)">купить</button></span>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                </div>
+                <div class="pages">
+                    <div class="page">0</div>
+                    <div class="page">1</div>
+                    <div class="page">2</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="contact">+7(999)2345-945</div>
+        <div id="mail-us" onclick="showContactForm()">Обратная связь</div>
+    </footer>
+    <script src="./src/api.js"></script>
+    <script src="./src/cart.js"></script>
+    <script src="./src/offer.js"></script>
+    <script src="./src/login.js"></script>
+    <script src="./src/chat.js"></script>
+    <script src="./src/main.js"></script>
+</body>
+
+</html>
